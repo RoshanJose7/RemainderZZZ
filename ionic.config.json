@@ -1,0 +1,7 @@
+{
+  "name": "Remainder",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
