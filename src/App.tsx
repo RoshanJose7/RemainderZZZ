@@ -1,4 +1,7 @@
 import React from "react";
+import { IonApp, IonHeader, IonRouterOutlet, IonContent } from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route } from "react-router-dom";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -18,43 +21,42 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import {
-  IonApp,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCol,
-  IonContent,
-  IonGrid,
-  IonHeader,
-  IonRow,
-  IonText,
-  IonTitle,
-} from "@ionic/react";
+
+/* Contexts */
+import { AuthProvider } from "./utils/context";
+
+/* Components */
+import Header from "./components/Header";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+/* Pages */
+import HomePage from "./pages/HomePage";
+import DashBoardPage from "./pages/DashBoardpage";
+import LoginPage from "./pages/LoginPage";
+import SignUpPage from "./pages/SignUpPage";
 
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonHeader>
-        <IonTitle>
-          <IonText color="danger">
-            <h1>RemainderZZZ</h1>
-          </IonText>
-        </IonTitle>
-      </IonHeader>
-      <IonContent>
-        <IonGrid>
-          <IonRow>
-            <IonCol>
-              <IonCard>
-                <IonCardHeader>
-                  <IonCardTitle>Card Title</IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-      </IonContent>
+      <AuthProvider>
+        <IonHeader>
+          <Header />
+        </IonHeader>
+        <IonContent>
+          <IonReactRouter>
+            <IonRouterOutlet>
+              <ProtectedRoute
+                isExact={true}
+                path="/home"
+                Component={HomePage}
+              />
+              <Route exact path="/" component={DashBoardPage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/signup" component={SignUpPage} />
+            </IonRouterOutlet>
+          </IonReactRouter>
+        </IonContent>
+      </AuthProvider>
     </IonApp>
   );
 };
