@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "185058699900",
+    "firebase_url": "https://todoapp-development-86325.firebaseio.com",
+    "project_id": "todoapp-development-86325",
+    "storage_bucket": "todoapp-development-86325.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185058699900:android:180b2ed9f41c0b1d1537f9",
+        "android_client_info": {
+          "package_name": "com.rjose7.remainderzzz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185058699900-nivvtf90bds6csrf0drdvbr7b4bo8r55.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFQlELRh8PJSvyg36Ma2ZKTOqtvRdkd2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185058699900-nivvtf90bds6csrf0drdvbr7b4bo8r55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
